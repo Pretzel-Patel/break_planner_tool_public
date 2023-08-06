@@ -1,0 +1,89 @@
+.white-text {
+    color:white;
+}
+
+button 
+{
+    max-width: 100%;
+}
+
+.mdl-textfield {
+    width:100%;
+}
+
+#image{
+    height:40px;
+    padding-right: 20px;
+}
+
+.bunnings-green {
+    background-color: rgb(13,82,87) !important;
+}
+
+.bunnings-red {
+    background-color: rgb(255,51,0) !important;
+}
+
+.mdl-button--fab {
+    background: rgb(255,51,0);
+    color: rgb(255,255,255)
+}
+
+
+
+/* input:focus, textarea:focus, select:focus{
+    outline: none;
+} */
+
+.remove {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+}
+
+.breaks {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-size: 15px !important;
+}
+
+.dialog1, .dialog2, .dialog4 {
+    height: 40%;
+    width: 20%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 90%;
+    border-radius: 25px;
+}
+
+.dialog3 {
+    height: 30%;
+    width: 20%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 90%;
+    border-radius: 25px;
+}
+
+
+.mdl-dialog__content-big {
+    height: 60%;
+    overflow: auto;
+}
+
+.content3 {
+    height: 40% !important;
+}
+
+.roles {
+    border-radius: 30px;
+    height: 30px;
+    font-size: 16px !important;
+    min-width: 0px;
+    max-width: 100%;
+}
+
+.rectangle {
+    border-radius: 20px;
+}

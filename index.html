@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-red.min.css" />
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Break Planner</title>
+
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header bunnings-green">
+            <div class="mdl-layout__header-row" style="padding-left: 15px; padding-right: 80px;">
+                <!-- Image -->
+                <a href="index.html"><img src="logo.png" alt="Image" id="image"></a>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Feedback feature -->
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect bunnings-red remove"
+                    onclick="openFeedbackDialog()">
+                    <i class="material-icons">question_answer</i>
+                    <span class="mdl-button__ripple-container">
+                        <span class="mdl-ripple"></span>
+                    </span>
+                </button>&nbsp&nbsp&nbsp&nbsp
+                <!-- Help feature -->
+                <!--
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect bunnings-red remove"
+                    onclick="openHelpDialog()">
+                    <i class="material-icons">help_outline</i>
+                    <span class="mdl-button__ripple-container">
+                        <span class="mdl-ripple"></span>
+                    </span>
+                </button>-->&nbsp&nbsp&nbsp&nbsp
+                <!-- Title -->
+                <span class="mdl-layout-title white-text">Break Planner</span>
+                <!-- Navigation. We hide it in small screens. -->
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Recall Dialog Box -->
+                <dialog class="mdl-dialog dialog-big dialog1">
+                    <h4 style="text-align:center;">Recall a saved list</h4>
+                    <div class="mdl-dialog__content-big">
+                        <ul class="mdl-list" id="recallList">
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="mdl-grid dialog-buttons">
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-red close">
+                            Cancel
+                        </button>
+                    </div>
+                </dialog>
+                <!-- Save Dialog Box -->
+                <dialog class="mdl-dialog dialog-big dialog2">
+                    <h4 style="text-align:center;">Enter a label for your list</h4>
+                    <div class="mdl-dialog__content-big">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="labelInput">
+                            <label class="mdl-textfield__label" for="labelInput">Label...</label>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="mdl-grid dialog-buttons">
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-red close">
+                            Cancel
+                        </button>
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-green"
+                            onclick="save()">
+                            Confirm
+                        </button>
+                    </div>
+                </dialog>
+                <!-- Submit Dialog Box -->
+                <dialog class="mdl-dialog dialog-big dialog3">
+                    <h4 style="text-align:center;">Submit</h4>
+                    <div class="mdl-dialog__content-big content3">
+                        <p>Have you saved your list? Changes cannot be made after submission.</p>
+                    </div>
+                    <br>
+                    <div class="mdl-grid dialog-buttons">
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-red close">
+                            Return
+                        </button>
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-green"
+                            onclick="submit()">
+                            Submit
+                        </button>
+                    </div>
+                </dialog>
+                <!-- Feedback Dialog Box -->
+                <dialog class="mdl-dialog dialog-big dialog4">
+                    <h4 style="text-align:center;">Feedback</h4>
+                    <div class="">
+                        <p>Please leave any feedback you have on this application!</p>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text"
+                            id="feedbackName" autocomplete="off">
+                        <label class="mdl-textfield__label" for="feedbackName">Name (optional)...</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <textarea class="mdl-textfield__input" type="text" rows="3" id="feedback" ></textarea>
+                        <label class="mdl-textfield__label" for="feedback">Feedback...</label>
+                    </div>
+                    <br>
+                    <div class="mdl-grid dialog-buttons">
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-red close">
+                            Return
+                        </button>
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-green"
+                            onclick="submitFeedback()">
+                            Submit
+                        </button>
+                    </div>
+                </dialog>
+                <!-- Submit Dialog Box -->
+                <dialog class="mdl-dialog dialog-big dialog3">
+                    <h4 style="text-align:center;">Submit</h4>
+                    <div class="mdl-dialog__content-big content3">
+                        <p>Have you saved your list? Changes cannot be made after submission.</p>
+
+                    </div>
+                    <br>
+                    <div class="mdl-grid dialog-buttons">
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-red close">
+                            Return
+                        </button>
+                        <button type="button" style="margin: auto;"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bunnings-green"
+                            onclick="submit()">
+                            Submit
+                        </button>
+                    </div>
+                </dialog>
+
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col"></div>
+                    <div class="mdl-cell mdl-cell--8-col" id="centreColumn">
+
+                        <table class="mdl-data-table mdl-js-data-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric" style="width:25%;text-align:center;">
+                                        Name</th>
+                                    <th class="mdl-data-table__cell--non-numeric" style="width:10%;text-align:center;">
+                                        Start</th>
+                                    <th class="mdl-data-table__cell--non-numeric" style="width:10%;text-align:center;">
+                                        End</th>
+                                    <th class="mdl-data-table__cell--non-numeric" style="width:55%;text-align:center;">
+                                        Controls</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inputTable">
+                                <tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+        <footer style="text-align: center;"> <small>&copy; Copyright 2021, Preet Patel</small> </footer>
+    </div>
+    <script src="shared.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
