@@ -334,16 +334,19 @@ const MIN_TIME_FOR_SECOND_15 = "07:00";
 const START_TIME = "08:00"; 
 const END_TIME = "20:00";
 const DOUBLING_START_TIME = "12:00";
-let TEAM = ["Annie","Ahlam","Kayla","Takara","Cathleen",
+let TEAM = ["Annie","Ahlam","Georgia","Takara",
                 "Tahnee","Monique","Carol","Mia",
-                "Emily","Renee","Katrina","Carla","Lisa",
-                "Manpreet","Eliza","Ashlea","Jasmine","Julie",
-                "Kerrie","Lana","Linda","Lee","Marjorie","Patty",
-                "Sarah","Simone","Keeley","Olivia",
+                "Emily","Renee","Katrina","Carla","Lisa K",
+                "Manpreet","Ashlea","Jasmine","Arushi",
+                "Kerrie","Kyra","Marjorie","Logann","Mollie",
+                "Sarah","Iris","Keeley","Martina","Alana G", "Alana K",
+                "Talar", "Tamar","Charlie","Courtney","Ella",
+                "Lisa S","Tara","Claire","Zoe","Amelia",
 
                 "Harry","Marty","Josh","Finley","Alan",
-                "Lochie","Vimaal","Eric","Preet",
-                "Amber","Christo","Hunter","Elijah"];
+                "Lochie","Vimaal","Eric","Preet","Ben",
+                "Christo","Christian", "Matthew","Jono",
+                "Hamesh","William", "Amaan", "Oscar"];
 TEAM.sort()
 const testTime = 6; // seconds
 const ROLES = ["SD","CnC/Hire","Reg","Door","TS","BSCO","Nurs.","Breaks","Cafe","CPA","Extra"]
