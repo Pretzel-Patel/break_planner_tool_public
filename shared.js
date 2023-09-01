@@ -181,13 +181,13 @@ class Worker {
             else if (shiftLength >=300 && shiftLength < 400)
             {
             }
-            else if (shiftLength >=400 && shiftLength <= 600)
+            else if (shiftLength >=400 && shiftLength < 500)
             {
                 allMyBreaks[0] = [startRoundedDown + Math.floor(shiftLength/50)*25,25,this._name]
             }
-            else if (shiftLength > 600 && shiftLength <= 700)
+            else if (shiftLength >= 500 && shiftLength < 700)
             {
-                let index = Math.floor((shiftLength-600)/50)
+                let index = Math.floor((shiftLength-500)/50)
                 allMyBreaks[0] = [startRoundedDown + BREAKS_MATRIX_2[1][index][0],50,this._name]
                 allMyBreaks[1] = [startRoundedDown + BREAKS_MATRIX_2[1][index][1],25,this._name]
             } 
@@ -329,7 +329,7 @@ class StaffList {
         Below settings can be adjusted to meet RBA or store requirements.
 */
 const MIN_TIME_FOR_FIRST_15 = "04:00";
-const MIN_TIME_FOR_FIRST_30 = "06:01";
+const MIN_TIME_FOR_FIRST_30 = "05:01";
 const MIN_TIME_FOR_SECOND_15 = "07:00";
 const START_TIME = "08:00"; 
 const END_TIME = "20:00";
@@ -359,8 +359,8 @@ const BREAKS_MATRIX = [
     [25, 25, 50,  50,  50,  50, 100, 175, 200, 225, 250]       // With 3 breaks
 ];
 const BREAKS_MATRIX_2 = [
-    [600,650,700,700,750,800,850,900,950,1000,1050],
-    [[200,450],[200,450],[200,475],[150,350,550],[150,375,575],[175,400,625],[200,425,650],[200,450,675],[200,475,725],[225,500,750],[225,525,800]]
+    [500,550,600,650,700,700,750,800,850,900,950,1000,1050],
+    [[175,300],[200,350],[200,450],[200,450],[200,475],[150,350,550],[150,375,575],[175,400,625],[200,425,650],[200,450,675],[200,475,725],[225,500,750],[225,525,800]]
 ]
 const BREAKS_MATRIX_3 = [
     [700,750,800,850,900,950,1000,1050],
