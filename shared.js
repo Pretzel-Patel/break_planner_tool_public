@@ -193,7 +193,7 @@ class Worker {
             } 
             else if (shiftLength >=700 && shiftLength < 1100)
             {
-                let index = Math.floor((shiftLength-700)/50) + 5;        // What is the +5 for?
+                let index = Math.floor((shiftLength-700)/50) + 5;        // Q: What is the +5 for? A: BREAKS_MATRIX_2 has a double entry at 7
                 allMyBreaks[0] = [startRoundedDown + BREAKS_MATRIX_2[1][index][0],25,this._name]
                 allMyBreaks[1] = [startRoundedDown + BREAKS_MATRIX_2[1][index][1],50,this._name]
                 allMyBreaks[2] = [startRoundedDown + BREAKS_MATRIX_2[1][index][2],25,this._name]
@@ -211,32 +211,32 @@ class Worker {
     {
         let shiftLength = this.shiftLength;
         let allMyBreaks = this._allMyBreaks;
-        if (shiftLength === 600) // exactly 600 hour shift so they can have optional 30min break
-        {
-            if (allMyBreaks.length === 2 && allMyBreaks[0][1] === 25)
-            {
-                allMyBreaks.pop()
-                allMyBreaks[0] = [timeToNum(this._start) + Math.floor(shiftLength/50)*25,25,this._name];
-                this._breakChanges = 0;
-            }
-            else if (allMyBreaks.length === 2 && allMyBreaks[0][1] === 50)
-            {
-                let tempTime = allMyBreaks[0][1];
-                allMyBreaks[0][1] = allMyBreaks[1][1];
-                allMyBreaks[1][1] = tempTime;
-                this._allMyBreaks = allMyBreaks;
-                this._breakChanges = 2;
-            }
-            else if (allMyBreaks.length === 1)
-            {
-                let index = Math.floor((shiftLength-600)/50)
-                allMyBreaks[0] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][0],50,this._name]
-                allMyBreaks[1] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][1],25,this._name]
-                this._breakChanges = 1;
-            }
-            this._allMyBreaks = allMyBreaks;
-        } 
-        else if (shiftLength > 600 && shiftLength <= 700)
+        // if (shiftLength === 600) // exactly 600 hour shift so they can have optional 30min break
+        // {
+        //     if (allMyBreaks.length === 2 && allMyBreaks[0][1] === 25)
+        //     {
+        //         allMyBreaks.pop()
+        //         allMyBreaks[0] = [timeToNum(this._start) + Math.floor(shiftLength/50)*25,25,this._name];
+        //         this._breakChanges = 0;
+        //     }
+        //     else if (allMyBreaks.length === 2 && allMyBreaks[0][1] === 50)
+        //     {
+        //         let tempTime = allMyBreaks[0][1];
+        //         allMyBreaks[0][1] = allMyBreaks[1][1];
+        //         allMyBreaks[1][1] = tempTime;
+        //         this._allMyBreaks = allMyBreaks;
+        //         this._breakChanges = 2;
+        //     }
+        //     else if (allMyBreaks.length === 1)
+        //     {
+        //         let index = Math.floor((shiftLength-600)/50)
+        //         allMyBreaks[0] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][0],50,this._name]
+        //         allMyBreaks[1] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][1],25,this._name]
+        //         this._breakChanges = 1;
+        //     }
+        //     this._allMyBreaks = allMyBreaks;
+        // } 
+        else if (shiftLength > 500 && shiftLength < 700)
         {
             let tempTime = allMyBreaks[0][1];
             allMyBreaks[0][1] = allMyBreaks[1][1];
@@ -244,18 +244,18 @@ class Worker {
             this._allMyBreaks = allMyBreaks;
             this._breakChanges = 1-this._breakChanges;
         } 
-        else if (shiftLength > 700 && shiftLength <= 1100)
+        else if (shiftLength >= 700 && shiftLength <= 1100)
         {
-            if (allMyBreaks.length === 3)
+            if (allMyBreaks.length === 3)    // Switch from 15+30+15 to 30+30
             {
                 allMyBreaks.pop()
                 let index = Math.floor((shiftLength-700)/50);
                 allMyBreaks[0] = [timeToNum(this._start) + BREAKS_MATRIX_3[1][index][0],50,this._name]
                 allMyBreaks[1] = [timeToNum(this._start) + BREAKS_MATRIX_3[1][index][1],50,this._name]
             }
-            else if (allMyBreaks.length === 2)
+            else if (allMyBreaks.length === 2) // Switch from 30+30 to 15+30+15
             {
-                let index = Math.floor((shiftLength-700)/50) + 3;
+                let index = Math.floor((shiftLength-700)/50) + 5;
                 allMyBreaks[0] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][0],25,this._name]
                 allMyBreaks[1] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][1],50,this._name]
                 allMyBreaks[2] = [timeToNum(this._start) + BREAKS_MATRIX_2[1][index][2],25,this._name]
@@ -333,7 +333,7 @@ const MIN_TIME_FOR_FIRST_30 = "05:01";
 const MIN_TIME_FOR_SECOND_15 = "07:00";
 const START_TIME = "08:00"; 
 const END_TIME = "20:00";
-const DOUBLING_START_TIME = "12:00";
+const DOUBLING_START_TIME = "11:30";
 let TEAM = ["Annie","Ahlam","Georgia","Takara",
                 "Tahnee","Monique","Carol","Mia",
                 "Emily","Renee","Katrina","Carla","Lisa K",
@@ -358,10 +358,12 @@ const BREAKS_MATRIX = [
     [25, 25, 50,  50, 100, 100, 150, 200, 250, 300, 325],      // With 2 breaks
     [25, 25, 50,  50,  50,  50, 100, 175, 200, 225, 250]       // With 3 breaks
 ];
+// Break offset times for 15+30, 30+15, 15+30+15. 
 const BREAKS_MATRIX_2 = [
     [500,550,600,650,700,700,750,800,850,900,950,1000,1050],
     [[175,300],[200,350],[200,450],[200,450],[200,475],[150,350,550],[150,375,575],[175,400,625],[200,425,650],[200,450,675],[200,475,725],[225,500,750],[225,525,800]]
 ]
+// Break offset times for 30+30 
 const BREAKS_MATRIX_3 = [
     [700,750,800,850,900,950,1000,1050],
     [[200,450],[225,475],[250,525],[250,550],[250,575],[275,625],[300,650],[300,675]]
