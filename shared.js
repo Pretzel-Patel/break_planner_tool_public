@@ -236,7 +236,7 @@ class Worker {
         //     }
         //     this._allMyBreaks = allMyBreaks;
         // } 
-        else if (shiftLength > 500 && shiftLength < 700)
+        if (shiftLength > 500 && shiftLength < 700)
         {
             let tempTime = allMyBreaks[0][1];
             allMyBreaks[0][1] = allMyBreaks[1][1];
