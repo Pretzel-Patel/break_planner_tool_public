@@ -140,7 +140,7 @@ function updateName(staffNum)
 
 function updateStart(staffNum) 
 {
-    staffList.staffList[staffNum-1].start = document.getElementById(`start${staffNum}`).value;
+    staffList.staffList[staffNum-1].start = document.getElementById(`start${staffNum}`).value; // Doesn't .start call a function that set the breaks, so why does .allMyBreaks() also run??
     staffList.staffList[staffNum-1].allMyBreaks();
     displayBreakIcons(staffNum);
 }
