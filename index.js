@@ -817,7 +817,7 @@ function displayBreakIcons(staffNum)
                         </button>`
                 }
             }
-            if (shiftLength >= 600 && shiftLength <= 1100)
+            if (shiftLength > 500 && shiftLength <= 1100)
             {
                 document.getElementById(`change${staffNum}`).innerHTML = 
                 `<button
