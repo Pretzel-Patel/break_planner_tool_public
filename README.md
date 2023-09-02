@@ -10,7 +10,6 @@ no part of the code can be copied, edited or used without the permission of the 
 The owner gives permission to the Support Team and Management of Bunnings Vermont South to use the Break Planner,
 through a google chrome browser.
 
-** If you intend to delete any or all files in this folder, please contact me via the below contact details. **
+** If you wish to use any or all files in this folder, please contact me via the below contact details. **
 
-Ph. 04 7012 6582
 Email preetjpatel1@gmail.com
