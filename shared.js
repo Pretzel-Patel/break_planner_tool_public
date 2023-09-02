@@ -181,11 +181,11 @@ class Worker {
             else if (shiftLength >=300 && shiftLength < 400)
             {
             }
-            else if (shiftLength >=400 && shiftLength < 500)
+            else if (shiftLength >=400 && shiftLength <= 500)
             {
                 allMyBreaks[0] = [startRoundedDown + Math.floor(shiftLength/50)*25,25,this._name]
             }
-            else if (shiftLength >= 500 && shiftLength < 700)
+            else if (shiftLength > 500 && shiftLength < 700)
             {
                 let index = Math.floor((shiftLength-500)/50)
                 allMyBreaks[0] = [startRoundedDown + BREAKS_MATRIX_2[1][index][0],50,this._name]
