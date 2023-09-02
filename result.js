@@ -332,5 +332,5 @@ function createPDF()
 
     pdf = pdfMake.createPdf(doc)
     pdf.open()
-    // pdf.download('Breaks.pdf')
+    pdf.download('Breaks.pdf') // In case browser does not allow popup windows
 }
