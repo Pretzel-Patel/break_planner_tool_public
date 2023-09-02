@@ -1,2 +1,16 @@
 # break_planner_tool_public
 Break Planning Tool
+
+This repo contains the files for a Break Planner tool.
+
+The code (all .js, .html and .css files) is created and owned by Preet Patel. The .png files (logos) are not 
+owned by the writer, and they are not used in the program (pending permission). Under the Copyright Act (1968), 
+no part of the code can be copied, edited or used without the permission of the owner.
+
+The owner gives permission to the Support Team and Management of Bunnings Vermont South to use the Break Planner,
+through a google chrome browser.
+
+** If you intend to delete any or all files in this folder, please contact me via the below contact details. **
+
+Ph. 04 7012 6582
+Email preetjpatel1@gmail.com
