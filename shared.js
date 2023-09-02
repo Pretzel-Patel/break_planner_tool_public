@@ -193,7 +193,7 @@ class Worker {
             } 
             else if (shiftLength >=700 && shiftLength < 1100)
             {
-                let index = Math.floor((shiftLength-700)/50) + 3;
+                let index = Math.floor((shiftLength-700)/50) + 5;        // What is the +5 for?
                 allMyBreaks[0] = [startRoundedDown + BREAKS_MATRIX_2[1][index][0],25,this._name]
                 allMyBreaks[1] = [startRoundedDown + BREAKS_MATRIX_2[1][index][1],50,this._name]
                 allMyBreaks[2] = [startRoundedDown + BREAKS_MATRIX_2[1][index][2],25,this._name]
