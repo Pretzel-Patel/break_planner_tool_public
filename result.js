@@ -330,5 +330,7 @@ function createPDF()
         
     }
 
-    pdfMake.createPdf(doc).download()
+    pdf = pdfMake.createPdf(doc)
+    pdf.open()
+    pdf.download()
 }
