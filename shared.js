@@ -342,11 +342,14 @@ let TEAM = ["Annie","Ahlam","Georgia","Takara",
                 "Sarah","Iris","Keeley","Martina","Alana G", "Alana K",
                 "Talar", "Tamar","Charlie","Courtney","Ella",
                 "Lisa S","Tara","Claire","Zoe","Amelia",
+                "Olivia", "Cleo","Amalia","Deborah","Anya",
 
-                "Harry","Marty","Josh","Finley","Alan",
+
+                "Harry","Marty","Josh","Finley",
                 "Lochie","Vimaal","Eric","Preet","Ben",
                 "Christo","Christian", "Matthew","Jono",
-                "Hamesh","William", "Amaan", "Oscar"];
+                "Hamesh","William", "Amaan", "Oscar",
+                "Joshua","Kon"];
 TEAM.sort()
 const testTime = 6; // seconds
 const ROLES = ["SD","CnC/Hire","Reg","Door","TS","BSCO","Nurs.","Breaks","Cafe","CPA","Extra"]
