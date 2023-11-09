@@ -334,7 +334,7 @@ const MIN_TIME_FOR_SECOND_15 = "07:00";
 const START_TIME = "08:00"; 
 const END_TIME = "20:00";
 const DOUBLING_START_TIME = "11:30";
-let TEAM = ["Annie","Ahlam","Georgia","Takara",
+let TEAM = ["Annie","Ahlam","Takara",
                 "Tahnee","Monique","Carol","Mia",
                 "Emily","Renee","Katrina","Carla","Lisa K",
                 "Manpreet","Ashlea","Jasmine","Arushi",
@@ -349,7 +349,7 @@ let TEAM = ["Annie","Ahlam","Georgia","Takara",
                 "Lochie","Vimaal","Eric","Preet","Ben",
                 "Christo","Christian", "Matthew","Jono",
                 "Hamesh","William", "Amaan", "Oscar",
-                "Joshua","Kon"];
+                "Joshua","Kon","Jake","Julian"];
 TEAM.sort()
 const testTime = 6; // seconds
 const ROLES = ["SD","CnC/Hire","Reg","Door","TS","BSCO","Nurs.","Breaks","Cafe","CPA","Extra"]
