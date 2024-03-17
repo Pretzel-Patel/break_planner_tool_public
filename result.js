@@ -250,17 +250,17 @@ function receiveShiftData()
 
 function reorderShiftData(data)
 {
-    let refinedShiftData = [['Name', 'Shift', 'Breaks']]
+    let refinedShiftData = [['Name', 'Shift', 'Breaks', 'Time out', 'Time back']]
     for (let i=0; i<ROLES.length; i++)
     {
         if ((data.findIndex(elem => elem[3]===i))!==-1)
         {
-            refinedShiftData.push([{text:(getRole(i)), colSpan: 3, alignment: 'center', margin: [0,0,127,0], bold:true,fillColor: '#A4A4A4'},{},{}]);
+            refinedShiftData.push([{text:(getRole(i)), colSpan: 5, alignment: 'center', margin: [0,0,127,0], bold:true, fillColor: '#A4A4A4'},{},{},{},{}]);
             for (let j=1; j<data.length; j++)
             {
                 if (data[j][3]===i)
                 {
-                    refinedShiftData.push(data[j].splice(0,3));
+                    refinedShiftData.push(data[j].splice(0,3).concat([{},{}]);
                 }
             }
         }
@@ -297,16 +297,16 @@ function createPDF()
                         style: 'table',
                         table: {
                             heights:9.4,
-                            widths: [55,55,55],
+                            widths: [40, 40, 40, 40, 40],
                             body: shiftData
                         }
                     },
                     {
-                        width: '55%',
+                        width: '45%',
                         style: 'table',
                         table:{
                             heights: 9.4,
-                            widths: [50,'*','*','*'],
+                            widths: [45,'*','*','*'],
                             body: rowData
                             
                         }
