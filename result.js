@@ -260,7 +260,7 @@ function reorderShiftData(data)
             {
                 if (data[j][3]===i)
                 {
-                    refinedShiftData.push(data[j].splice(0,3).concat([{},{}]);
+                    refinedShiftData.push(data[j].splice(0,3).concat([{},{}]));
                 }
             }
         }
