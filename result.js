@@ -28,7 +28,7 @@ function addResultRow(time, name1, name2, name3, name4, perturbs, indices, needs
     {
         if (perturbs[i]<0)
         {
-            colors[i] = "green";
+            colors[i] = "orange";
         }
         else if (perturbs[i]>0)
         {
@@ -36,7 +36,7 @@ function addResultRow(time, name1, name2, name3, name4, perturbs, indices, needs
         }
         else 
         {
-            colors[i] = "black";
+            colors[i] = "green";
         }
     }
     let table = document.getElementById("resultTable");
@@ -255,7 +255,7 @@ function reorderShiftData(data)
     {
         if ((data.findIndex(elem => elem[3]===i))!==-1)
         {
-            refinedShiftData.push([{text:(getRole(i)), colSpan: 5, alignment: 'center', margin: [0,0,127,0], bold:true, fillColor: '#A4A4A4'},{},{},{},{}]);
+            refinedShiftData.push([{text:(getRole(i)), colSpan: 5, alignment: 'center', margin: [0,0,212,0], bold:true, fillColor: '#A4A4A4'},{},{},{},{}]);
             for (let j=1; j<data.length; j++)
             {
                 if (data[j][3]===i)
@@ -263,7 +263,9 @@ function reorderShiftData(data)
                     refinedShiftData.push(data[j].splice(0,3).concat([{},{}]));
                 }
             }
+		// refinedShiftData.push([{text:'', colSpan: 5},{},{},{},{}]); // Add blank row
         }
+	
     }
     return refinedShiftData;
 }
@@ -272,19 +274,21 @@ function createPDF()
     let shiftData = reorderShiftData(receiveShiftData());
     for (let i=shiftData.length; i<rowData.length; i++)
     {
-        shiftData.push(["","",""])
+        shiftData.push(["","","","",""])
     }
     let doc =  {
         content: [
             {
                 alignment: 'justify',
                 columns: [                  
-                    {                          
+                    {   
+			width: '55%',                       
                         text:"Support Daily Run Sheet",
                         style:"header"    
                     },
                     {
-                        text: "Date: "+getDate(),
+                        width: '45%',
+			text: "Date: "+getDate(),
                         style:"header"
                     }
                 ]
@@ -293,11 +297,11 @@ function createPDF()
                 alignment: 'justify',
                 columns: [                  
                     {
-                        width: '45%',
+                        width: '55%',
                         style: 'table',
                         table: {
                             heights:9.4,
-                            widths: [40, 40, 40, 40, 40],
+                            widths: [45,45,45,45,45],
                             body: shiftData
                         }
                     },
@@ -322,7 +326,7 @@ function createPDF()
                 margin: [0, 0, 0, 10]
             },
             table: {
-                margin: [0, 0, 20, 0],
+                margin: [0, 0, 0, 0],
                 fontSize: 8,
                 alignment: 'center'
             }
