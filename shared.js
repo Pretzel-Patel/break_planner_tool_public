@@ -339,16 +339,15 @@ const START_TIME = "08:00";
 const END_TIME = "20:00";
 const DOUBLING_START_TIME = "11:30";
 
-let TEAM = ["Abigail", "Ahlam", "Alana G", "Alana K", "Amalia", "Amy", "Annie", "Anya", "Arushi", "Ashlea",
-            "Carol", "Carla", "Charlie", "Claire", "Cleo", "Courtney", 
-            "Deborah", "Ella", "Emily", "Iris", "Jasmine", 
-            "Kai", "Katrina", "Keeley", "Kerrie", "Kiara", "Kyra", "Lisa K", "Lisa S", "Logann", 
+let TEAM = ["Abigail", "Ahlam", "Alana G", "Amalia", "Amy", "Anya", "Arushi", "Ashlea",
+            "Carol", "Carla", "Charlie", "Claire", "Cleo", "Courtney", "Debbi", "Emily",
+            "Iris", "Kai", "Katrina", "Keeley", "Kerrie", "Kiara", "Kyra", "Lisa", "Logann", 
             "Madison", "Manpreet", "Marjorie", "Martina", "Mia", "Mollie", "Monique", 
             "Olivia", "Renee", "Sarah", "Tahlia", "Tahnee", "Takara", "Talar", "Tamar", "Tara", "Zoe", 
             
-            "Amaan", "Ben", "Benjamin", "Blake", "Christo", "Christian", "Eric", "Finley", 
-            "Hamesh", "Harry", "Jake", "Jono", "Josh", "Joshua", "Julian", 
-            "Kon", "Lochie", "Marty", "Matthew", "Max", 
+            "Amaan", "Bailey", "Ben", "Benjamin", "Blake", "Christo", "Christian", "Eric", "Finley", 
+            "Hamesh", "Harry", "Jake", "Jono", "Josh", "Julian", 
+            "Kon", "Kye", "Lochie", "Marty", "Matthew", "Max", 
             "Oscar", "Preet", "Vimaal", "William"]
 
 TEAM.sort()
