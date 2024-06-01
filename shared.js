@@ -334,22 +334,19 @@ const MIN_TIME_FOR_SECOND_15 = "07:00";
 const START_TIME = "08:00"; 
 const END_TIME = "20:00";
 const DOUBLING_START_TIME = "11:30";
-let TEAM = ["Annie","Ahlam","Takara",
-                "Tahnee","Monique","Carol","Mia",
-                "Emily","Renee","Katrina","Carla","Lisa K",
-                "Manpreet","Ashlea","Jasmine","Arushi",
-                "Kerrie","Kyra","Marjorie","Logann","Mollie",
-                "Sarah","Iris","Keeley","Martina","Alana G", "Alana K",
-                "Talar", "Tamar","Charlie","Courtney","Ella",
-                "Lisa S","Tara","Claire","Zoe","Amelia",
-                "Olivia", "Cleo","Amalia","Deborah","Anya",
 
+let TEAM = ["Abigail", "Ahlam", "Alana G", "Alana K", "Amalia", "Amy", "Annie", "Anya", "Arushi", "Ashlea",
+            "Carol", "Carla", "Charlie", "Claire", "Cleo", "Courtney", 
+            "Deborah", "Ella", "Emily", "Iris", "Jasmine", 
+            "Kai", "Katrina", "Keeley", "Kerrie", "Kiara", "Kyra", "Lisa K", "Lisa S", "Logann", 
+            "Madison", "Manpreet", "Marjorie", "Martina", "Mia", "Mollie", "Monique", 
+            "Olivia", "Renee", "Sarah", "Tahlia", "Tahnee", "Takara", "Talar", "Tamar", "Tara", "Zoe", 
+            
+            "Amaan", "Ben", "Benjamin", "Blake", "Christo", "Christian", "Eric", "Finley", 
+            "Hamesh", "Harry", "Jake", "Jono", "Josh", "Joshua", "Julian", 
+            "Kon", "Lochie", "Marty", "Matthew", "Max", 
+            "Oscar", "Preet", "Vimaal", "William"]
 
-                "Harry","Marty","Josh","Finley",
-                "Lochie","Vimaal","Eric","Preet","Ben",
-                "Christo","Christian", "Matthew","Jono",
-                "Hamesh","William", "Amaan", "Oscar",
-                "Joshua","Kon","Jake","Julian"];
 TEAM.sort()
 const testTime = 6; // seconds
 const ROLES = ["SD","CnC/Hire","Reg","Door","TS","BSCO","Nurs.","Breaks","Cafe","CPA","Extra"]
