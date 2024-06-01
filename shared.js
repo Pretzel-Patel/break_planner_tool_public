@@ -106,6 +106,10 @@ class Worker {
         {
             this._name = "Andr\u0259w";
         }
+        if (newName == "Christo")
+        {
+            this._name = "Chris\u0442o";
+        }
     }
     set start(newStart) {
         this._start = newStart;
