@@ -1,6 +1,8 @@
 # break_planner_tool_public
 Break Planning Tool
 
+Access web-application at: https://pretzel-patel.github.io/breaks/
+
 This repo contains the files for a Break Planner tool.
 
 The code (all .js, .html and .css files) is created and owned by Preet Patel. The .png files (logos) are not 
